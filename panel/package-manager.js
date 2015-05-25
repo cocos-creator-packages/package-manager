@@ -30,10 +30,10 @@ Editor.registerPanel( 'package-manager.panel', {
 
     returnEnabled: function (enabled) {
         if (enabled) {
-            return "Disabled";
+            return 'Disabled';
         }
         else {
-            return "Enbled";
+            return 'Enbled';
         }
     },
 });
