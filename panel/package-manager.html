@@ -5,35 +5,37 @@
         <ul>
             <template is="dom-repeat" id="list" items="{{packages}}">
                 <li builtin$="{{item.builtin}}" class="pkg-item">
-                    <div class="col-item name">
-                        <span class="pkg-name">{{item.name}}</span>
-                        <span class="pkg-version">
+                    <div class="layout horizontal justified name-col">
+                        <a class="name">{{item.info.name}}</a>
+                        <div class="version">
                             <span>Version: </span>
                             <span>{{item.info.version}}</span>
-                        </span>
+                        </div>
                     </div>
-                    <div class="col-item discription">
-                        <span class="pkg-discription">{{item.info.description}}</span>
+
+                    <div class="layout horizontal desc-col">
+                        <span class="desc">{{item.info.description}}</span>
                     </div>
-                    <div class="col-item author">
-                        <span class="pkg-author">
+
+                    <div class="layout horizontal justified author-col">
+                        <div>
                             <span>Author:</span>
                             <span class="author">{{item.info.author}}</span>
-                        </span>
-                        <span class="operation">
+                        </div>
+                        <div class="layout horizontal btn-group">
                             <div class="btn">
                                 <i class="fa fa-trash-o"></i>
-                                Uninstall
+                                <span>Uninstall</span>
                             </div>
                             <div class="btn">
                                 <i class="fa fa-pause"></i>
-                                <span>{{returnEnabled(item.enabled)}}</span>
+                                <span>{{_enabledText(item.enabled)}}</span>
                             </div>
-                            <div class="btn" on-click="_onReload" name$="{{item.name}}">
+                            <div class="btn" on-click="_onReload">
                                 <i class="fa fa-rotate-left"></i>
-                                Reload
+                                <span>Reload</span>
                             </div>
-                        </span>
+                        </div>
                     </div>
                 </li>
             </template>

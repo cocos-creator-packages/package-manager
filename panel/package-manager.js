@@ -11,7 +11,11 @@ Editor.registerPanel( 'package-manager.panel', {
     ready: function () {
         Editor.Package.query(function ( results ) {
             var packages = results.map( function (item) {
-                return { name: item.info.name, enabled: item.enabled, builtin: item.builtin, info: item.info };
+                return {
+                    enabled: item.enabled,
+                    builtin: item.builtin,
+                    info: item.info
+                };
             });
             this.set( 'packages', packages );
         }.bind(this));
@@ -25,15 +29,15 @@ Editor.registerPanel( 'package-manager.panel', {
         event.stopPropagation();
 
         var item = this.$.list.itemForElement(event.target);
-        Editor.Package.reload(item.name);
+        Editor.Package.reload(item.info.name);
     },
 
-    returnEnabled: function (enabled) {
+    _enabledText: function (enabled) {
         if (enabled) {
-            return 'Disabled';
+            return 'Disable';
         }
         else {
-            return 'Enabled';
+            return 'Enable';
         }
     },
 });

@@ -16,6 +16,7 @@
       "title": "Package Manager",
       "width": 500,
       "height": 800,
+      "min-width": 500,
       "messages": [
       ],
       "profiles": {
