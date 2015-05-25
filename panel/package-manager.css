@@ -45,10 +45,11 @@ li .row-item {
 .pkg-item {
     height: 80px;
     padding: 5px;
-    margin-top: 5px;
+    margin-top: 15px;
     color: #a2a2a2;
-    border: 1px solid #202020;
+    border: 1px solid #b6b6b6;
     border-radius: 2px;
+    background: #2C2C2C;
 }
 
 .col-item {
@@ -59,7 +60,7 @@ li .row-item {
 .name {
     height: 30px;
     line-height: 30px;
-    border-bottom: 1px solid #202020;
+    border-bottom: 1px solid #8e8e8e;
 }
 .author {
     height: 30px;
@@ -73,7 +74,7 @@ li .row-item {
 }
 
 .pkg-item:hover {
-    background: #404141;
+    background: #4f4f4f;
 }
 
 .pkg-item .pkg-name {

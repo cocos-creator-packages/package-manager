@@ -21,14 +21,7 @@ Editor.registerPanel( 'package-manager.panel', {
         EditorUI.update( this, 'packages' );
     },
 
-    _onReload: function ( event ) {
-        event.stopPropagation();
-
-        var item = this.$.list.itemForElement(event.target);
-        Editor.Package.reload(item.name);
-    },
-
-    _reload: function (event) {
+    _onReload: function (event) {
         event.stopPropagation();
 
         var item = this.$.list.itemForElement(event.target);
