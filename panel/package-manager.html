@@ -4,12 +4,36 @@
     <template>
         <ul>
             <template is="dom-repeat" id="list" items="{{packages}}">
-                <li builtin$="{{item.builtin}}">
-                    <div class="row-item flex-1"><span>{{item.name}}</span></div>
+                <li builtin$="{{item.builtin}}" class="pkg-item">
+                    <div class="col-item name">
+                        <span class="pkg-name">{{item.name}}</span>
+                        <span class="pkg-version">
+                            <span>version: </span>
+                            <span>{{item.info.version}}</span>
+                        </span>
+                    </div>
+                    <div class="col-item discription">
+                        <span class="pkg-discription">{{item.info.description}}</span>
+                    </div>
+                    <div class="col-item author">
+                        <span class="pkg-author">
+                            <span>Author:</span>
+                            <span>{{item.info.author}}</span>
+                        </span>
+                        <span class="operation">
+                            <div class="btn">Uninstall</div>
+                            <div class="btn">{{returnEnabled(item.enabled)}}</div>
+                            <div class="btn" on-click="_reload" name$="{{item.name}}">
+                                <i class="fa fa-rotate-left"></i>
+                                Reload
+                            </div>
+                        </span>
+                    </div>
+                    <!-- <div class="row-item flex-1"><span>{{item.name}}</span></div>
                     <div class="row-item flex-1">Enabled: <span>{{item.enabled}}</span></div>
                     <div class="row-item icon-button" on-click="_onReload">
                         <i class="fa fa-rotate-left"></i>
-                    </div>
+                    </div> -->
                 </li>
             </template>
         </ul>

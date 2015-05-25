@@ -11,7 +11,7 @@ Editor.registerPanel( 'package-manager.panel', {
     ready: function () {
         Editor.Package.query(function ( results ) {
             var packages = results.map( function (item) {
-                return { name: item.info.name, enabled: item.enabled, builtin: item.builtin };
+                return { name: item.info.name, enabled: item.enabled, builtin: item.builtin, info: item.info };
             });
             this.set( 'packages', packages );
         }.bind(this));
@@ -26,6 +26,22 @@ Editor.registerPanel( 'package-manager.panel', {
 
         var item = this.$.list.itemForElement(event.target);
         Editor.Package.reload(item.name);
+    },
+
+    _reload: function (event) {
+        event.stopPropagation();
+
+        var item = this.$.list.itemForElement(event.target);
+        Editor.Package.reload(item.name);
+    },
+
+    returnEnabled: function (enabled) {
+        if (enabled) {
+            return "Disabled";
+        }
+        else {
+            return "Enbled";
+        }
     },
 });
 
