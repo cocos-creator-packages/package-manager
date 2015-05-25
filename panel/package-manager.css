@@ -1,7 +1,9 @@
 :host {
     color: #aaa;
-
+    /*background: rgb(51,51,51);*/
     overflow: auto;
+    min-width: 450px;
+    cursor: pointer;
 }
 
 ul {
@@ -11,7 +13,6 @@ ul {
 
 li {
     list-style-type: none;
-    display: flex;
 }
 
 li[builtin] {
@@ -39,4 +40,98 @@ li .row-item {
 
 .icon-button:active {
     background-color: #555;
+}
+
+.pkg-item {
+    height: 80px;
+    padding: 10px;
+    margin-top: 15px;
+    color: #a2a2a2;
+    border-radius: 2px;
+    background: #383838;
+}
+
+.col-item {
+    width: 100%;
+    float: left;
+}
+
+.name {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #8e8e8e;
+}
+.author {
+    height: 30px;
+    line-height: 30px;
+}
+
+.discription {
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.pkg-item:hover {
+    /*background: #4f4f4f;*/
+}
+
+.pkg-item .pkg-name {
+    float: left;
+    color: #e1e1e1;
+    text-transform: capitalize;
+}
+
+.pkg-item .pkg-name:hover {
+    text-decoration: underline;
+}
+
+.pkg-item .pkg-version {
+    float: right;
+    font-size: 12px;
+}
+
+.pkg-item .pkg-discription {
+    float: left;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.pkg-item .pkg-author {
+    float: left;
+    font-size: 12px;
+}
+.pkg-item .pkg-author .author {
+    color: #267fba;
+}
+
+.pkg-item .pkg-author .author:hover {
+    text-decoration: underline;
+}
+
+.operation {
+    float: right;
+}
+
+.btn {
+    float: left;
+    margin-right: 5px;
+    height: 20px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #B2B2B2;
+    line-height: 20px;
+    cursor: pointer;
+    border: 1px solid rgba(44, 44, 44, 1);
+    background: #353537;
+}
+
+.btn:hover {
+    background: #565656;
+}
+
+.btn:active {
+    background: #272727;
 }
