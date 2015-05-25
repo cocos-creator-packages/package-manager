@@ -1,6 +1,6 @@
 :host {
     color: #aaa;
-    background: rgb(51,51,51);
+    /*background: rgb(51,51,51);*/
     overflow: auto;
     min-width: 450px;
     cursor: pointer;
@@ -44,12 +44,11 @@ li .row-item {
 
 .pkg-item {
     height: 80px;
-    padding: 5px;
+    padding: 10px;
     margin-top: 15px;
     color: #a2a2a2;
-    border: 1px solid #b6b6b6;
     border-radius: 2px;
-    background: #2C2C2C;
+    background: #383838;
 }
 
 .col-item {
@@ -74,13 +73,17 @@ li .row-item {
 }
 
 .pkg-item:hover {
-    background: #4f4f4f;
+    /*background: #4f4f4f;*/
 }
 
 .pkg-item .pkg-name {
     float: left;
     color: #e1e1e1;
     text-transform: capitalize;
+}
+
+.pkg-item .pkg-name:hover {
+    text-decoration: underline;
 }
 
 .pkg-item .pkg-version {
@@ -97,6 +100,13 @@ li .row-item {
 .pkg-item .pkg-author {
     float: left;
     font-size: 12px;
+}
+.pkg-item .pkg-author .author {
+    color: #267fba;
+}
+
+.pkg-item .pkg-author .author:hover {
+    text-decoration: underline;
 }
 
 .operation {
