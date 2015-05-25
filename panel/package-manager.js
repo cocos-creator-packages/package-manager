@@ -33,7 +33,7 @@ Editor.registerPanel( 'package-manager.panel', {
             return 'Disabled';
         }
         else {
-            return 'Enbled';
+            return 'Enabled';
         }
     },
 });
