@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A simple package debugger",
   "author": "Firebox Technology",
+  "hosts": {
+      "editor-framework": "0.0.1"
+  },
   "main": "main.js",
   "menus": {
     "Developer/Package Manager": {
