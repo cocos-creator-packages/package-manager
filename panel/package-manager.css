@@ -78,19 +78,24 @@ li .row-item {
 }
 
 .author-col {
-    margin-top: 15px;
+    margin-top: 5px;
     align-items: baseline;
     overflow: hidden;
 }
 
 .author-col .author {
     font-size: 12px;
-    color: #888
+    color: #888;
+    margin-left: 5px;
 }
 .author-col .author:hover {
     cursor: pointer;
     color: #267fba;
     text-decoration: underline;
+}
+
+.btn-col {
+    margin-top: 30px;
 }
 
 .btn {
@@ -114,6 +119,7 @@ li .row-item {
 }
 .btn i {
     font-size: 15px;
+    width: 20px;
 }
 .btn:hover {
     color: #ffffff;

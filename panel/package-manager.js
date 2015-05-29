@@ -32,6 +32,13 @@ Editor.registerPanel( 'package-manager.panel', {
         Editor.Package.reload(item.info.name);
     },
 
+    _onTest: function (event) {
+        event.stopPropagation();
+
+        var item = this.$.list.itemForElement(event.target);
+        Editor.Package.runTests(item.info.name);
+    },
+
     _enabledText: function (enabled) {
         if (enabled) {
             return 'Disable';

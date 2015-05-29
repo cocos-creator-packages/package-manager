@@ -17,24 +17,27 @@
                         <span class="desc">{{item.info.description}}</span>
                     </div>
 
-                    <div class="layout horizontal justified author-col">
-                        <div>
-                            <span>Author:</span>
-                            <span class="author">{{item.info.author}}</span>
+                    <div class="layout horizontal author-col">
+                        <span>Author:</span>
+                        <span class="author">{{item.info.author}}</span>
+                    </div>
+
+                    <div class="layout horizontal btn-col end-justified">
+                        <div class="btn">
+                            <i class="fa fa-trash-o"></i>
+                            <span>Uninstall</span>
                         </div>
-                        <div class="layout horizontal btn-group">
-                            <div class="btn">
-                                <i class="fa fa-trash-o"></i>
-                                <span>Uninstall</span>
-                            </div>
-                            <div class="btn">
-                                <i class="fa fa-pause"></i>
-                                <span>{{_enabledText(item.enabled)}}</span>
-                            </div>
-                            <div class="btn" on-click="_onReload">
-                                <i class="fa fa-rotate-left"></i>
-                                <span>Reload</span>
-                            </div>
+                        <div class="btn">
+                            <i class="fa fa-pause"></i>
+                            <span>{{_enabledText(item.enabled)}}</span>
+                        </div>
+                        <div class="btn" on-click="_onReload">
+                            <i class="fa fa-rotate-left"></i>
+                            <span>Reload</span>
+                        </div>
+                        <div class="btn" on-click="_onTest">
+                            <i class="fa fa-tasks"></i>
+                            <span>Test</span>
                         </div>
                     </div>
                 </li>
