@@ -4,7 +4,7 @@
   "description": "A simple package debugger",
   "author": "Firebox Technology",
   "hosts": {
-      "editor-framework": "0.0.1"
+      "editor-framework": "^0.1.0"
   },
   "main": "main.js",
   "menus": {
@@ -21,6 +21,8 @@
       "height": 800,
       "min-width": 500,
       "messages": [
+          "package:loaded",
+          "package:unloaded"
       ],
       "profiles": {
         "local": {

@@ -3,7 +3,7 @@
 
     <template>
         <ul>
-            <template is="dom-repeat" id="list" items="{{packages}}">
+            <template is="dom-repeat" id="list" items="{{packages}}" sort="_sortPackages">
                 <li builtin$="{{item.builtin}}" class="pkg-item">
                     <div class="layout horizontal justified name-col">
                         <a class="name">{{item.info.name}}</a>
@@ -35,7 +35,7 @@
                             <i class="fa fa-rotate-left"></i>
                             <span>Reload</span>
                         </div>
-                        <div class="btn" on-click="_onTest">
+                        <div class="btn" on-click="_onTest" hidden$="{{!item.hasTests}}">
                             <i class="fa fa-tasks"></i>
                             <span>Test</span>
                         </div>
