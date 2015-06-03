@@ -4,7 +4,7 @@
     <template>
         <ul>
             <template is="dom-repeat" id="list" items="{{packages}}" sort="_sortPackages">
-                <li builtin$="{{item.builtin}}" class="pkg-item">
+                <li class="pkg-item">
                     <div class="layout horizontal justified name-col">
                         <a class="name">{{item.info.name}}</a>
                         <div class="version">
@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="layout horizontal btn-col end-justified">
-                        <div class="btn">
+                        <div class="btn" hidden$="{{item.builtin}}">
                             <i class="fa fa-trash-o"></i>
                             <span>Uninstall</span>
                         </div>
