@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="layout horizontal btn-col end-justified">
-                        <editor-button disabled$="{{item.builtin}}">
+                        <editor-button disabled$="[[item.builtin]]">
                             <i class="fa fa-trash-o"></i>
                             <span>Uninstall</span>
                         </editor-button>
@@ -37,7 +37,7 @@
                             <i class="fa fa-rotate-left"></i>
                             <span>Reload</span>
                         </editor-button>
-                        <editor-button on-click="_onTest" disabled$="{{!item.hasTests}}">
+                        <editor-button on-click="_onTest" disabled$="[[!item.hasTests]]">
                             <i class="fa fa-tasks"></i>
                             <span>Test</span>
                         </editor-button>
