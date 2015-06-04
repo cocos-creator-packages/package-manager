@@ -1,3 +1,5 @@
+<link rel="import" href="packages://ui-kit/widget/index.html">
+
 <dom-module id="package-manager">
     <link rel="import" type="css" href="package-manager.css">
 
@@ -23,22 +25,22 @@
                     </div>
 
                     <div class="layout horizontal btn-col end-justified">
-                        <div class="btn" hidden$="{{item.builtin}}">
+                        <editor-button disabled$="{{item.builtin}}">
                             <i class="fa fa-trash-o"></i>
                             <span>Uninstall</span>
-                        </div>
-                        <div class="btn">
+                        </editor-button>
+                        <editor-button>
                             <i class="fa fa-pause"></i>
                             <span>{{_enabledText(item.enabled)}}</span>
-                        </div>
-                        <div class="btn" on-click="_onReload">
+                        </editor-button>
+                        <editor-button on-click="_onReload">
                             <i class="fa fa-rotate-left"></i>
                             <span>Reload</span>
-                        </div>
-                        <div class="btn" on-click="_onTest" hidden$="{{!item.hasTests}}">
+                        </editor-button>
+                        <editor-button on-click="_onTest" disabled$="{{!item.hasTests}}">
                             <i class="fa fa-tasks"></i>
                             <span>Test</span>
-                        </div>
+                        </editor-button>
                     </div>
                 </li>
             </template>

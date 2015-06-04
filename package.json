@@ -6,6 +6,9 @@
   "hosts": {
       "editor-framework": "^0.1.0"
   },
+  "dependencies": {
+      "ui-kit": "^0.0.1"
+  },
   "main": "main.js",
   "menus": {
     "Developer/Package Manager": {

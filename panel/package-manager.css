@@ -94,34 +94,11 @@ li .row-item {
     margin-top: 30px;
 }
 
-.btn {
-    flex: 0 0 auto;
-
-    height: 25px;
-    line-height: 23px;
+editor-button {
     margin-left: 5px;
-    padding: 2px 15px;
-    border-radius: 2px;
-    font-size: 12px;
-    font-weight: 500;
-
-    /* background: #353537; */
-    background-color: transparent;
-    background-image: -webkit-linear-gradient(#43484d,#373b3f);
-
-    color: #b2b2b2;
-    cursor: pointer;
-    border: 1px solid rgba(44, 44, 44, 1);
 }
-.btn i {
+
+editor-button i {
     font-size: 15px;
     width: 20px;
-}
-.btn:hover {
-    color: #ffffff;
-    background-image: -webkit-linear-gradient(#4f555b,#43484d);
-}
-.btn:active {
-    color: #ffffff;
-    background-image: -webkit-linear-gradient(#43484d,#373b3f);
 }
