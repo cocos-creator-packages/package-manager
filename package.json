@@ -4,10 +4,10 @@
   "description": "A simple package debugger",
   "author": "Firebox Technology",
   "hosts": {
-      "editor-framework": "^0.1.0"
+      "editor-framework": "^0.3.0"
   },
   "dependencies": {
-      "ui-kit": "^0.0.1"
+      "ui-kit": "^0.0.3"
   },
   "main": "main.js",
   "menus": {

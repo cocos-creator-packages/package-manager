@@ -25,11 +25,11 @@
                     </div>
 
                     <div class="layout horizontal btn-col end-justified">
-                        <editor-button disabled$="[[item.builtin]]">
+                        <editor-button class="red" hidden$="[[item.builtin]]">
                             <i class="fa fa-trash-o"></i>
                             <span>Uninstall</span>
                         </editor-button>
-                        <editor-button>
+                        <editor-button disabled$="[[item.builtin]]">
                             <i class="fa fa-pause"></i>
                             <span>{{_enabledText(item.enabled)}}</span>
                         </editor-button>
