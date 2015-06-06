@@ -25,19 +25,19 @@
                     </div>
 
                     <div class="layout horizontal btn-col end-justified">
-                        <editor-button class="red" hidden$="[[item.builtin]]">
+                        <editor-button class="red" no-focus hidden$="[[item.builtin]]">
                             <i class="fa fa-trash-o"></i>
                             <span>Uninstall</span>
                         </editor-button>
-                        <editor-button disabled$="[[item.builtin]]">
+                        <editor-button no-focus disabled$="[[item.builtin]]">
                             <i class="fa fa-pause"></i>
                             <span>{{_enabledText(item.enabled)}}</span>
                         </editor-button>
-                        <editor-button on-click="_onReload">
+                        <editor-button no-focus on-click="_onReload">
                             <i class="fa fa-rotate-left"></i>
                             <span>Reload</span>
                         </editor-button>
-                        <editor-button on-click="_onTest" disabled$="[[!item.hasTests]]">
+                        <editor-button no-focus on-click="_onTest" disabled$="[[!item.hasTests]]">
                             <i class="fa fa-tasks"></i>
                             <span>Test</span>
                         </editor-button>
