@@ -27,10 +27,6 @@ Editor.registerPanel( 'package-manager.panel', {
         }.bind(this));
     },
 
-    attached: function () {
-        EditorUI.update( this, 'packages' );
-    },
-
     'package:loaded': function ( name ) {
         Editor.Package.queryInfo(name, function ( result ) {
             this.push( 'packages', _createPackageInfo(result));
