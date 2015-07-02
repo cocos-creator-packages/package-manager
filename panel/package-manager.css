@@ -3,6 +3,10 @@
     @apply(--layout-vertical);
 }
 
+#search {
+    width: 240px;
+}
+
 .border {
     overflow-x: hidden;
     overflow-y: auto;

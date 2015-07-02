@@ -30,6 +30,14 @@ Editor.registerPanel( 'package-manager.panel', {
         }.bind(this));
     },
 
+    focusOnSearch: function ( event ) {
+        if ( event ) {
+            event.stopPropagation();
+        }
+
+        this.$.search.setFocus();
+    },
+
     'package:loaded': function ( name ) {
         Editor.Package.queryInfo(name, function ( result ) {
             this.push( 'packages', _createPackageInfo(result));
@@ -73,8 +81,11 @@ Editor.registerPanel( 'package-manager.panel', {
         return a.info.name.localeCompare( b.info.name );
     },
 
-    applyFilter: function (packages,filterText) {
+    _applyFilter: function (packages,filterText) {
         if (!filterText) {
+            this.$.view.hidden = false;
+            this.$.none.hidden = true;
+
             return packages;
         }
 
@@ -85,13 +96,13 @@ Editor.registerPanel( 'package-manager.panel', {
                 tmpPackages.push(packages[i]);
             }
         }
-        if (tmpPackages.length <= 0) {
-            this.$.view.hidden = true;
-            this.$.none.hidden = false;
-        }
-        else {
+        if (tmpPackages.length > 0) {
             this.$.view.hidden = false;
             this.$.none.hidden = true;
+        }
+        else {
+            this.$.view.hidden = true;
+            this.$.none.hidden = false;
         }
 
         return tmpPackages;
