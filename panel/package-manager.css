@@ -6,10 +6,15 @@
 ul {
     padding: 0px;
     margin: 10px;
+    margin-top: 2px;
 }
 
 li {
     list-style-type: none;
+}
+
+li:first-child {
+    margin-top: 0px;
 }
 
 li .row-item {
@@ -101,4 +106,13 @@ editor-button {
 editor-button i {
     font-size: 15px;
     width: 20px;
+}
+
+.toolbar {
+    margin: 0px 10px;
+    justify-content: flex-end;
+}
+
+#none {
+    text-align: center;
 }

@@ -1,5 +1,4 @@
 (function () {
-
 var Path = require('fire-path');
 var _ = require('lodash');
 
@@ -16,6 +15,10 @@ Editor.registerPanel( 'package-manager.panel', {
     is: 'package-manager',
 
     properties: {
+        filterText: {
+            type: String,
+            value: ''
+        }
     },
 
     ready: function () {
@@ -68,6 +71,28 @@ Editor.registerPanel( 'package-manager.panel', {
 
     _sortPackages: function ( a, b ) {
         return a.info.name.localeCompare( b.info.name );
+    },
+
+    applyFilter: function (packages,filterText) {
+        if (!filterText) {
+            return packages;
+        }
+
+        var _packages = [];
+        var filter = filterText.toLowerCase();
+        for (var i = 0; i < packages.length; ++i) {
+            if (packages[i].info.name.toLowerCase().match(filter)) {
+                _packages.push(packages[i]);
+            }
+        }
+        if (_packages.length <= 0) {
+            this.$.none.hidden = false;
+        }
+        else {
+            this.$.none.hidden = true;
+        }
+
+        return _packages;
     },
 });
 
