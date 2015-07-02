@@ -78,21 +78,21 @@ Editor.registerPanel( 'package-manager.panel', {
             return packages;
         }
 
-        var _packages = [];
+        var tmpPackages = [];
         var filter = filterText.toLowerCase();
         for (var i = 0; i < packages.length; ++i) {
             if (packages[i].info.name.toLowerCase().match(filter)) {
-                _packages.push(packages[i]);
+                tmpPackages.push(packages[i]);
             }
         }
-        if (_packages.length <= 0) {
+        if (tmpPackages.length <= 0) {
             this.$.none.hidden = false;
         }
         else {
             this.$.none.hidden = true;
         }
 
-        return _packages;
+        return tmpPackages;
     },
 });
 
