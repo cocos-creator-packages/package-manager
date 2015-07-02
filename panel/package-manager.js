@@ -86,9 +86,11 @@ Editor.registerPanel( 'package-manager.panel', {
             }
         }
         if (tmpPackages.length <= 0) {
+            this.$.view.hidden = true;
             this.$.none.hidden = false;
         }
         else {
+            this.$.view.hidden = false;
             this.$.none.hidden = true;
         }
 

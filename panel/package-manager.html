@@ -7,47 +7,49 @@
         <editor-toolbar class="toolbar">
             <editor-input placeholder="Search... (RegExp)" input-value="{{filterText}}"></editor-input>
         </editor-toolbar>
-        <ul class="flex-1">
-            <template is="dom-repeat" id="list" items="{{applyFilter(packages,filterText)}}" sort="_sortPackages">
-                <li class="pkg-item">
-                    <div class="layout horizontal justified name-col">
-                        <a class="name">{{item.info.name}}</a>
-                        <div class="version">
-                            <span>Version: </span>
-                            <span>{{item.info.version}}</span>
+        <div class="border">
+            <ul id="view" class="flex-1">
+                <template is="dom-repeat" id="list" items="{{applyFilter(packages,filterText)}}" sort="_sortPackages">
+                    <li class="pkg-item">
+                        <div class="layout horizontal justified name-col">
+                            <a class="name">{{item.info.name}}</a>
+                            <div class="version">
+                                <span>Version: </span>
+                                <span>{{item.info.version}}</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="layout horizontal desc-col">
-                        <span class="desc">{{item.info.description}}</span>
-                    </div>
+                        <div class="layout horizontal desc-col">
+                            <span class="desc">{{item.info.description}}</span>
+                        </div>
 
-                    <div class="layout horizontal author-col">
-                        <span>Author:</span>
-                        <span class="author">{{item.info.author}}</span>
-                    </div>
+                        <div class="layout horizontal author-col">
+                            <span>Author:</span>
+                            <span class="author">{{item.info.author}}</span>
+                        </div>
 
-                    <div class="layout horizontal btn-col end-justified">
-                        <editor-button class="red" no-focus hidden$="[[item.builtin]]">
-                            <i class="fa fa-trash-o"></i>
-                            <span>Uninstall</span>
-                        </editor-button>
-                        <editor-button no-focus disabled$="[[item.builtin]]">
-                            <i class="fa fa-pause"></i>
-                            <span>{{_enabledText(item.enabled)}}</span>
-                        </editor-button>
-                        <editor-button no-focus on-click="_onReload">
-                            <i class="fa fa-rotate-left"></i>
-                            <span>Reload</span>
-                        </editor-button>
-                        <editor-button no-focus on-click="_onTest" disabled$="[[!item.hasTests]]">
-                            <i class="fa fa-tasks"></i>
-                            <span>Test</span>
-                        </editor-button>
-                    </div>
-                </li>
-            </template>
-        </ul>
+                        <div class="layout horizontal btn-col end-justified">
+                            <editor-button class="red" no-focus hidden$="[[item.builtin]]">
+                                <i class="fa fa-trash-o"></i>
+                                <span>Uninstall</span>
+                            </editor-button>
+                            <editor-button no-focus disabled$="[[item.builtin]]">
+                                <i class="fa fa-pause"></i>
+                                <span>{{_enabledText(item.enabled)}}</span>
+                            </editor-button>
+                            <editor-button no-focus on-click="_onReload">
+                                <i class="fa fa-rotate-left"></i>
+                                <span>Reload</span>
+                            </editor-button>
+                            <editor-button no-focus on-click="_onTest" disabled$="[[!item.hasTests]]">
+                                <i class="fa fa-tasks"></i>
+                                <span>Test</span>
+                            </editor-button>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </div>
         <div id="none" hidden>
             <h1>No Result!</h1>
         </div>
