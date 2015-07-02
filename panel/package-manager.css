@@ -1,12 +1,13 @@
 :host {
     color: #aaa;
-    overflow: auto;
+    @apply(--layout-vertical);
 }
 
 ul {
     padding: 0px;
     margin: 10px;
     margin-top: 2px;
+    overflow-y: scroll;
 }
 
 li {

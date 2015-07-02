@@ -7,7 +7,7 @@
         <editor-toolbar class="toolbar">
             <editor-input placeholder="Search... (RegExp)" input-value="{{filterText}}"></editor-input>
         </editor-toolbar>
-        <ul>
+        <ul class="flex-1">
             <template is="dom-repeat" id="list" items="{{applyFilter(packages,filterText)}}" sort="_sortPackages">
                 <li class="pkg-item">
                     <div class="layout horizontal justified name-col">
