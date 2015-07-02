@@ -12,6 +12,7 @@
   "main": "main.js",
   "menus": {
     "Developer/Package Manager": {
+      "icon": "panel/icon.png",
       "message": "package-manager:open"
     }
   },
@@ -20,6 +21,7 @@
       "frame": "panel/package-manager.html",
       "type": "dockable",
       "title": "Package Manager",
+      "icon": "panel/icon.png",
       "width": 500,
       "height": 800,
       "min-width": 500,
