@@ -1,10 +1,10 @@
 {
   "name": "package-manager",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "A simple package debugger",
   "author": "Firebox Technology",
   "hosts": {
-      "editor-framework": "^0.3.6"
+      "editor-framework": "^0.3.12"
   },
   "dependencies": {
       "ui-kit": "^0.0.3"
