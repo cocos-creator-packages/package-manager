@@ -31,11 +31,7 @@
       "messages": [
           "package:loaded",
           "package:unloaded"
-      ],
-      "profiles": {
-        "local": {
-        }
-      }
+      ]
     }
   }
 }
