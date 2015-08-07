@@ -4,10 +4,10 @@
   "description": "A simple package debugger",
   "author": "Firebox Technology",
   "hosts": {
-      "editor-framework": "^0.3.12"
+    "editor-framework": "^0.3.14"
   },
   "dependencies": {
-      "ui-kit": "^0.0.3"
+    "ui-kit": "^0.1.0"
   },
   "main": "main.js",
   "menus": {
@@ -29,8 +29,8 @@
         "command+f": "focusOnSearch"
       },
       "messages": [
-          "package:loaded",
-          "package:unloaded"
+        "package:loaded",
+        "package:unloaded"
       ]
     }
   }
