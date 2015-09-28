@@ -12,8 +12,6 @@ function _createPackageInfo ( result ) {
 }
 
 Editor.registerPanel( 'package-manager.panel', {
-    is: 'package-manager',
-
     properties: {
         filterText: {
             type: String,
