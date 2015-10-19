@@ -1,110 +1,111 @@
 (function () {
-var Path = require('fire-path');
-var _ = require('lodash');
+    'use strict';
 
-function _createPackageInfo ( result ) {
-    return {
-        enabled: result.enabled,
-        builtin: result.builtin,
-        hasTests: result.info.tests && result.info.tests.length > 0,
-        info: result.info,
-    };
-}
+    var _ = require('lodash');
 
-Editor.registerPanel( 'package-manager.panel', {
-    properties: {
-        filterText: {
-            type: String,
-            value: ''
-        }
-    },
+    function _createPackageInfo ( result ) {
+        return {
+            enabled: result.enabled,
+            builtin: result.builtin,
+            hasTests: result.info.tests && result.info.tests.length > 0,
+            info: result.info,
+        };
+    }
 
-    ready: function () {
-        Editor.Package.queryInfos(function ( results ) {
-            var packages = results.map( function (item) {
-                return _createPackageInfo(item);
-            });
-            this.set( 'packages', packages );
-        }.bind(this));
-    },
-
-    focusOnSearch: function ( event ) {
-        if ( event ) {
-            event.stopPropagation();
-        }
-
-        this.$.search.setFocus();
-    },
-
-    'package:loaded': function ( name ) {
-        Editor.Package.queryInfo(name, function ( result ) {
-            this.push( 'packages', _createPackageInfo(result));
-        }.bind(this));
-    },
-
-    'package:unloaded': function ( name ) {
-        var idx = _.findIndex( this.packages, function ( item ) {
-            return item.info.name === name;
-        });
-        this.splice( 'packages', idx, 1 );
-    },
-
-    _onReload: function (event) {
-        event.stopPropagation();
-
-        var model = this.$.list.modelForElement(event.target);
-        var oldname = model.item.info.name;
-        Editor.Package.reload(oldname);
-    },
-
-    _onTest: function (event) {
-        event.stopPropagation();
-
-        var item = this.$.list.itemForElement(event.target);
-        Editor.Panel.open( 'tester.panel', {
-            name: item.info.name,
-        });
-    },
-
-    _enabledText: function (enabled) {
-        if (enabled) {
-            return 'Disable';
-        }
-        else {
-            return 'Enable';
-        }
-    },
-
-    _sortPackages: function ( a, b ) {
-        return a.info.name.localeCompare( b.info.name );
-    },
-
-    _applyFilter: function (packages,filterText) {
-        if (!filterText) {
-            this.$.view.hidden = false;
-            this.$.none.hidden = true;
-
-            return packages;
-        }
-
-        var tmpPackages = [];
-        var filter = filterText.toLowerCase();
-        for (var i = 0; i < packages.length; ++i) {
-            if (packages[i].info.name.toLowerCase().match(filter)) {
-                tmpPackages.push(packages[i]);
+    Editor.registerPanel( 'package-manager.panel', {
+        properties: {
+            filterText: {
+                type: String,
+                value: ''
             }
-        }
-        if (tmpPackages.length > 0) {
-            this.$.view.hidden = false;
-            this.$.none.hidden = true;
-        }
-        else {
-            this.$.view.hidden = true;
-            this.$.none.hidden = false;
-        }
+        },
 
-        return tmpPackages;
-    },
-});
+        ready: function () {
+            Editor.Package.queryInfos(function ( results ) {
+                var packages = results.map( function (item) {
+                    return _createPackageInfo(item);
+                });
+                this.set( 'packages', packages );
+            }.bind(this));
+        },
+
+        focusOnSearch: function ( event ) {
+            if ( event ) {
+                event.stopPropagation();
+            }
+
+            this.$.search.setFocus();
+        },
+
+        'package:loaded': function ( name ) {
+            Editor.Package.queryInfo(name, function ( result ) {
+                this.push( 'packages', _createPackageInfo(result));
+            }.bind(this));
+        },
+
+        'package:unloaded': function ( name ) {
+            var idx = _.findIndex( this.packages, function ( item ) {
+                return item.info.name === name;
+            });
+            this.splice( 'packages', idx, 1 );
+        },
+
+        _onReload: function (event) {
+            event.stopPropagation();
+
+            var model = this.$.list.modelForElement(event.target);
+            var oldname = model.item.info.name;
+            Editor.Package.reload(oldname);
+        },
+
+        _onTest: function (event) {
+            event.stopPropagation();
+
+            var item = this.$.list.itemForElement(event.target);
+            Editor.Panel.open( 'tester.panel', {
+                name: item.info.name,
+            });
+        },
+
+        _enabledText: function (enabled) {
+            if (enabled) {
+                return 'Disable';
+            }
+            else {
+                return 'Enable';
+            }
+        },
+
+        _sortPackages: function ( a, b ) {
+            return a.info.name.localeCompare( b.info.name );
+        },
+
+        _applyFilter: function (packages,filterText) {
+            if (!filterText) {
+                this.$.view.hidden = false;
+                this.$.none.hidden = true;
+
+                return packages;
+            }
+
+            var tmpPackages = [];
+            var filter = filterText.toLowerCase();
+            for (var i = 0; i < packages.length; ++i) {
+                if (packages[i].info.name.toLowerCase().match(filter)) {
+                    tmpPackages.push(packages[i]);
+                }
+            }
+            if (tmpPackages.length > 0) {
+                this.$.view.hidden = false;
+                this.$.none.hidden = true;
+            }
+            else {
+                this.$.view.hidden = true;
+                this.$.none.hidden = false;
+            }
+
+            return tmpPackages;
+        },
+    });
 
 })();
