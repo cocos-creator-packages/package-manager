@@ -11,9 +11,10 @@
   },
   "main": "main.js",
   "menus": {
-    "Developer/Package Manager": {
+    "i18n:MAIN_MENU.developer.title/Package Manager": {
       "icon": "panel/icon.png",
-      "message": "package-manager:open"
+      "message": "package-manager:open",
+      "dev": true
     }
   },
   "panels": {
