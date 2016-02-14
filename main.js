@@ -1,11 +1,15 @@
+'use strict';
+
 module.exports = {
-    load: function () {
-    },
+  load () {
+  },
 
-    unload: function () {
-    },
+  unload () {
+  },
 
-    'package-manager:open': function () {
-        Editor.Panel.open('package-manager.panel');
+  messages: {
+    open () {
+      Editor.Panel.open('package-manager.panel');
     },
+  }
 };
