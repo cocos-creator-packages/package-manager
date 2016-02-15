@@ -10,7 +10,7 @@
     "ui-kit": "^0.1.3"
   },
   "main": "main.js",
-  "menus": {
+  "main-menu": {
     "i18n:MAIN_MENU.developer.title/Package Manager": {
       "icon": "panel/icon.png",
       "message": "package-manager:open",
