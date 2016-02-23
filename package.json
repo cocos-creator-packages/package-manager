@@ -13,8 +13,7 @@
   "main-menu": {
     "i18n:MAIN_MENU.developer.title/Package Manager": {
       "icon": "panel/icon.png",
-      "message": "package-manager:open",
-      "dev": true
+      "message": "package-manager:open"
     }
   },
   "panels": {
