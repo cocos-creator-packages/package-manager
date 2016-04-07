@@ -37,13 +37,13 @@
             this.$.search.setFocus();
         },
 
-        'package:loaded': function ( name ) {
+        'editor:package-loaded': function ( event, name ) {
             Editor.Package.queryInfo(name, function ( result ) {
                 this.push( 'packages', _createPackageInfo(result));
             }.bind(this));
         },
 
-        'package:unloaded': function ( name ) {
+        'editor:package-unloaded': function ( event, name ) {
             var idx = _.findIndex( this.packages, function ( item ) {
                 return item.info.name === name;
             });
