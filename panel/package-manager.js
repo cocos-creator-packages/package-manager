@@ -21,7 +21,7 @@
         },
 
         ready: function () {
-            Editor.Package.queryInfos(function ( results ) {
+            Editor.Package.queryInfos(function ( err, results ) {
                 var packages = results.map( function (item) {
                     return _createPackageInfo(item);
                 });
@@ -38,7 +38,7 @@
         },
 
         'editor:package-loaded': function ( event, name ) {
-            Editor.Package.queryInfo(name, function ( result ) {
+            Editor.Package.queryInfo(name, function ( err, result ) {
                 this.push( 'packages', _createPackageInfo(result));
             }.bind(this));
         },
