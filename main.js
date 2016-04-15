@@ -9,7 +9,7 @@ module.exports = {
 
   messages: {
     open () {
-      Editor.Panel.open('package-manager.panel');
+      Editor.Panel.open('package-manager');
     },
   }
 };

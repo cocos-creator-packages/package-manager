@@ -12,7 +12,7 @@
         };
     }
 
-    Editor.registerPanel( 'package-manager.panel', {
+    Editor.polymerPanel( 'package-manager', {
         properties: {
             filterText: {
                 type: String,
@@ -62,7 +62,7 @@
             event.stopPropagation();
 
             var item = this.$.list.itemForElement(event.target);
-            Editor.Panel.open( 'tester.panel', {
+            Editor.Panel.open( 'tester', {
                 name: item.info.name,
             });
         },
