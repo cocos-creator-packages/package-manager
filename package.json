@@ -17,7 +17,8 @@
     }
   },
   "panel": {
-    "frame": "panel/package-manager.html",
+    "main": "panel/package-manager.html",
+    "ui": "polymer",
     "type": "dockable",
     "title": "Package Manager",
     "icon": "panel/icon.png",
@@ -26,10 +27,6 @@
     "min-width": 500,
     "shortcuts": {
       "command+f": "focusOnSearch"
-    },
-    "messages": [
-      "editor:package-loaded",
-      "editor:package-unloaded"
-    ]
+    }
   }
 }

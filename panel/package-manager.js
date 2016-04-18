@@ -37,17 +37,19 @@
             this.$.search.setFocus();
         },
 
-        'editor:package-loaded': function ( event, name ) {
-            Editor.Package.queryInfo(name, function ( err, result ) {
-                this.push( 'packages', _createPackageInfo(result));
-            }.bind(this));
-        },
+        messages: {
+            'editor:package-loaded': function ( event, name ) {
+                Editor.Package.queryInfo(name, function ( err, result ) {
+                    this.push( 'packages', _createPackageInfo(result));
+                }.bind(this));
+            },
 
-        'editor:package-unloaded': function ( event, name ) {
-            var idx = _.findIndex( this.packages, function ( item ) {
-                return item.info.name === name;
-            });
-            this.splice( 'packages', idx, 1 );
+            'editor:package-unloaded': function ( event, name ) {
+                var idx = _.findIndex( this.packages, function ( item ) {
+                    return item.info.name === name;
+                });
+                this.splice( 'packages', idx, 1 );
+            },
         },
 
         _onReload: function (event) {
