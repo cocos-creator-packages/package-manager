@@ -1,127 +1,118 @@
 :host {
-    color: #aaa;
-    @apply(--layout-vertical);
+  color: #aaa;
+  @apply(--layout-vertical);
 }
 
 #search {
-    width: 240px;
+  width: 240px;
 }
 
 .border {
-    overflow-x: hidden;
-    overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 ul {
-    padding: 0px;
-    margin: 10px;
+  padding: 0px;
+  margin: 10px;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 li:first-child {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 li .row-item {
-    overflow: hidden;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .icon-button {
-    color: #09f;
-    padding: 2px 4px;
-    border-radius: 0px;
-    border: none;
+  color: #09f;
+  padding: 2px 4px;
+  border-radius: 0px;
+  border: none;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 
 .icon-button:hover {
-    background-color: #333;
+  background-color: #333;
 }
 
 .icon-button:active {
-    background-color: #555;
+  background-color: #555;
 }
 
 .pkg-item {
-    padding: 10px;
-    margin-top: 15px;
-    border-radius: 2px;
-    background: #373737;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 2px;
+  background: #373737;
 }
 
 .name-col {
-    align-items: baseline;
+  align-items: baseline;
 }
 .name-col .name {
-    font-size: 16px;
-    font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
 
-    cursor: pointer;
-    color: #e1e1e1;
+  cursor: pointer;
+  color: #e1e1e1;
 
-    overflow: hidden;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .name-col .name:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .name-col .version {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .desc-col {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 .desc-col .desc {
-    font-size: 12px;
-    font-weight: 200;
-    color: #999;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: 200;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .author-col {
-    margin-top: 5px;
-    align-items: baseline;
-    overflow: hidden;
+  margin-top: 5px;
+  align-items: baseline;
+  overflow: hidden;
 }
 
 .author-col .author {
-    font-size: 12px;
-    color: #888;
-    margin-left: 5px;
+  font-size: 12px;
+  color: #888;
+  margin-left: 5px;
 }
 .author-col .author:hover {
-    cursor: pointer;
-    color: #267fba;
-    text-decoration: underline;
+  cursor: pointer;
+  color: #267fba;
+  text-decoration: underline;
 }
 
 .btn-col {
-    margin-top: 30px;
-}
-
-editor-button {
-    margin-left: 5px;
-}
-
-editor-button i {
-    font-size: 15px;
-    width: 20px;
+  margin-top: 30px;
 }
 
 .toolbar {
-    margin: 0px 10px;
-    justify-content: flex-end;
+  margin: 0px 10px;
+  justify-content: flex-end;
 }
 
 #none {
-    margin: auto;
-    text-align: center;
+  margin: auto;
+  text-align: center;
 }
