@@ -7,7 +7,6 @@
         <editor-toolbar class="toolbar">
           <ui-input id="search"
             unnavigable
-            class="tiny"
             value="{{filterText::input}}"
             placeholder="Search... (RegExp)"
           ></ui-input>
@@ -34,19 +33,19 @@
                 </div>
 
                 <div class="layout horizontal btn-col end-justified">
-                  <ui-button class="red tiny" no-focus hidden$="[[item.builtin]]">
+                  <ui-button class="red" no-focus hidden$="[[item.builtin]]">
                     <i class="fa fa-trash-o"></i>
                     <span>Uninstall</span>
                   </ui-button>
-                  <ui-button class="tiny" no-focus disabled$="[[item.builtin]]">
+                  <ui-button no-focus disabled$="[[item.builtin]]">
                     <i class="fa fa-pause"></i>
                     <span>{{_enabledText(item.enabled)}}</span>
                   </ui-button>
-                  <ui-button class="tiny" no-focus on-click="_onReload">
+                  <ui-button no-focus on-click="_onReload">
                     <i class="fa fa-rotate-left"></i>
                     <span>Reload</span>
                   </ui-button>
-                  <ui-button class="tiny" no-focus on-click="_onTest" disabled$="[[!item.hasTests]]">
+                  <ui-button no-focus on-click="_onTest" disabled$="[[!item.hasTests]]">
                     <i class="fa fa-tasks"></i>
                     <span>Test</span>
                   </ui-button>
