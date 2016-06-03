@@ -108,8 +108,21 @@ li .row-item {
 }
 
 .toolbar {
-  margin: 0px 10px;
+  position: relative;
+  box-sizing: border-box;
+  height: 26px;
+
+  display: flex;
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
   justify-content: flex-end;
+
+  padding: 4px 2px;
+  font-size: 1.0rem;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 #none {

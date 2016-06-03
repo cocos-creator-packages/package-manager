@@ -1,16 +1,14 @@
-<link rel="import" href="packages://ui-kit/widget/index.html">
-
 <dom-module id="package-manager">
     <link rel="import" type="css" href="package-manager.css">
 
     <template>
-        <editor-toolbar class="toolbar">
+        <div class="toolbar">
           <ui-input id="search"
             unnavigable
             value="{{filterText::change}}"
             placeholder="Search... (RegExp)"
           ></ui-input>
-        </editor-toolbar>
+        </div>
         <div class="border">
           <ul id="view" class="flex-1">
             <template is="dom-repeat" id="list" items="{{_applyFilter(packages,filterText)}}" sort="_sortPackages">
@@ -34,19 +32,18 @@
 
                 <div class="layout horizontal btn-col end-justified">
                   <ui-button class="red" no-focus hidden$="[[item.builtin]]">
-                    <i class="fa fa-trash-o"></i>
+                    <i class="icon-trash-empty"></i>
                     <span>Uninstall</span>
                   </ui-button>
                   <ui-button no-focus disabled$="[[item.builtin]]">
-                    <i class="fa fa-pause"></i>
+                    <i class="icon-pause"></i>
                     <span>{{_enabledText(item.enabled)}}</span>
                   </ui-button>
                   <ui-button no-focus on-click="_onReload">
-                    <i class="fa fa-rotate-left"></i>
+                    <i class="icon-ccw"></i>
                     <span>Reload</span>
                   </ui-button>
                   <ui-button no-focus on-click="_onTest" disabled$="[[!item.hasTests]]">
-                    <i class="fa fa-tasks"></i>
                     <span>Test</span>
                   </ui-button>
                 </div>

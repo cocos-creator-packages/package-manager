@@ -3,9 +3,6 @@
   "version": "0.1.4",
   "description": "A simple package debugger",
   "author": "Firebox Technology",
-  "dependencies": {
-    "ui-kit": "^0.1.3"
-  },
   "main": "main.js",
   "main-menu": {
     "i18n:MAIN_MENU.developer.title/Package Manager": {
