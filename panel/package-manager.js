@@ -6,7 +6,6 @@
   function _createPackageInfo ( result ) {
     return {
       enabled: result.enabled,
-      builtin: result.builtin,
       hasTests: result.info.tests && result.info.tests.length > 0,
       info: result.info,
     };
