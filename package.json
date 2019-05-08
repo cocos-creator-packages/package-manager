@@ -11,8 +11,7 @@
     }
   },
   "panel": {
-    "main": "panel/package-manager.html",
-    "ui": "polymer",
+    "main": "panel/package-manager.js",
     "type": "dockable",
     "title": "Package Manager",
     "icon": "panel/icon.png",
