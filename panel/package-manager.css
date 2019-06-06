@@ -1,6 +1,7 @@
 :host {
   color: #aaa;
-  @apply(--layout-vertical);
+  display: flex;
+  flex-direction: column;
 }
 
 #search {
