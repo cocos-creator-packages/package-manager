@@ -66,7 +66,7 @@ function createVue(elem) {
       },
 
       _sortPackages (a, b) {
-        return a.info.name.localeCompare(b.info.name);
+        return a.info.name.localeCompare(b.info.name, 'en', {numeric: true});
       },
 
       _applyFilter () {
