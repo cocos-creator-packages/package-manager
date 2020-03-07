@@ -130,3 +130,7 @@ li .row-item {
   margin: auto;
   text-align: center;
 }
+
+#package-manager{
+  overflow-y: scroll;
+}
